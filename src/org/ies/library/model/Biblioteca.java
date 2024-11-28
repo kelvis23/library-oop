@@ -12,6 +12,55 @@ public class Biblioteca {
         this.books = books;
     }
 
+    public boolean hasBook(String isbn) {
+        for (Book book: books){
+            if (book.getIsbn().equals(isbn)) {
+                return true;
+            }
+        }
+        return  false;
+    }
+    public boolean hasAuthor (String nif){
+        for (Book book:books){
+           for (Autor autor : book.getAutores()){
+               if (autor.getNif().equals(nif)){
+                   return true;
+               }
+
+            }
+        }
+        return false;
+    }
+    public int countBooks(String nif){
+        int contador = 0;
+        for (var book :books){
+            for (var autor:book.getAutores()){
+                if (autor.getNif().equals(nif)){
+                    contador+=1;
+                }
+            }
+        }
+        return contador;
+    }
+    public int countBooks (int year){
+        int cotador=0;
+        for (var book :books){
+            if (book.getYears()== year){
+                cotador +=1;
+            }
+        }
+        return cotador;
+    }
+    public String findBook(String isbn){
+        for (var book: books){
+            if (book.getIsbn().equals(isbn)){
+                return book.getIsbn();
+
+            }
+        }
+        return null;
+    }
+
     public String getName() {
         return name;
     }

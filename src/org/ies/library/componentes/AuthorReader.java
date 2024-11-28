@@ -13,8 +13,7 @@ public class AuthorReader {
     public Autor read (){
         System.out.println(" introduce los datos del autor");
         System.out.println("Introduce el NIF");
-        int nif = scanner.nextInt();
-        scanner.nextLine();
+        String nif = scanner.nextLine();
         System.out.println("intrduce el nombre");
         String name = scanner.nextLine();
         System.out.println("introduce el apellido");

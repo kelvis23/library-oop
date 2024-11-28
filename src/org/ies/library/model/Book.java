@@ -15,7 +15,14 @@ public class Book {
         this.years = years;
         this.autores = autores;
     }
-
+    public boolean hasAutor(String nif){
+        for (Autor autor : autores){
+            if (autor.getNif().equals(nif)){
+                return true;
+            }
+        }
+        return false;
+    }
     public String getIsbn() {
         return isbn;
     }
